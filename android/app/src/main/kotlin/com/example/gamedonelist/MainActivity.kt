@@ -1,4 +1,4 @@
-package com.example.gamedonelist
+package com.jacekkawiorski.gamedonelist
 
 import io.flutter.embedding.android.FlutterActivity
 

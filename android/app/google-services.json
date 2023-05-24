@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "115231981082",
+    "project_id": "gamedonelist89",
+    "storage_bucket": "gamedonelist89.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:115231981082:android:4b354e333378d15aff9ba3",
+        "android_client_info": {
+          "package_name": "com.jacekkawiorski.gamedonelist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "115231981082-cfbali4a6saeqks9v3oq71vn1tbjs7jk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzgj7m5tM9uzzzwL13y25xYFxfxyuaPn4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "115231981082-cfbali4a6saeqks9v3oq71vn1tbjs7jk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
