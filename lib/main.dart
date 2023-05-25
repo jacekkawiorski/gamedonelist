@@ -1,5 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:gamedonelist/app/home/home_page.dart';
+import 'package:gamedonelist/app/login/login_page.dart';
 import 'firebase_options.dart';
 
 import 'package:flutter/material.dart';
@@ -40,16 +42,9 @@ class RootPage extends StatelessWidget {
         builder: (context, snapshot) {
           final user = snapshot.data;
           if (user == null) {
-            return const Scaffold(
-                body: Center(
-              child: Text('jestes niezalogowany'),
-            ));
+            return const LoginPage();
           }
-          return Scaffold(
-            body: Center(
-              child: Text('jestes zalogowany jako ${user.email}'),
-            ),
-          );
+          return HomePage(user: user);
         });
   }
 }
