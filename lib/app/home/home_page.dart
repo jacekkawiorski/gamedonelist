@@ -1,6 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:flutter/material.dart';
+import 'package:gamedonelist/app/home/add_game/add_game_page_content.dart';
+import 'package:gamedonelist/app/home/game_list/game_list_page_content.dart';
+import 'package:gamedonelist/app/home/my_account/my_account_page_content.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({
@@ -20,33 +23,18 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Game Done List'),
+      ),
       body: Builder(builder: (context) {
         if (currenttIndex == 0) {
-          return const Center(
-            child: Text('Jeden'),
-          );
+          return const GameListPageContent();
         }
         if (currenttIndex == 1) {
-          return const Center(
-            child: Text('Dwa'),
-          );
+          return const AddGamePageContent();
         }
 
-        return Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text('jestes zalogowany jako ${widget.user.email}'),
-              const SizedBox(height: 35),
-              ElevatedButton(
-                onPressed: () {
-                  FirebaseAuth.instance.signOut();
-                },
-                child: const Text('Wyloguj'),
-              ),
-            ],
-          ),
-        );
+        return MyAccountPageContent(email: widget.user.email);
       }),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currenttIndex,

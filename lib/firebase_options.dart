@@ -17,10 +17,7 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -28,10 +25,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -49,6 +43,15 @@ class DefaultFirebaseOptions {
     }
   }
 
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyAo8eFPyCn82lRGi8rrxAjzBJU81JoJlvk',
+    appId: '1:115231981082:web:21b8dcfa819bc325ff9ba3',
+    messagingSenderId: '115231981082',
+    projectId: 'gamedonelist89',
+    authDomain: 'gamedonelist89.firebaseapp.com',
+    storageBucket: 'gamedonelist89.appspot.com',
+  );
+
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyCzgj7m5tM9uzzzwL13y25xYFxfxyuaPn4',
     appId: '1:115231981082:android:4b354e333378d15aff9ba3',
@@ -65,5 +68,15 @@ class DefaultFirebaseOptions {
     storageBucket: 'gamedonelist89.appspot.com',
     iosClientId: '115231981082-9b4526k07dmsthip8043ur2eh4clobql.apps.googleusercontent.com',
     iosBundleId: 'com.jacekkawiorski.gamedonelist',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyDkBzAYgOlI4v3FZSeb2wPm9F14DbaQ7kc',
+    appId: '1:115231981082:ios:89e5be1d0468cf85ff9ba3',
+    messagingSenderId: '115231981082',
+    projectId: 'gamedonelist89',
+    storageBucket: 'gamedonelist89.appspot.com',
+    iosClientId: '115231981082-hbvtpil8vuttjeji5krl26etug9jjjp7.apps.googleusercontent.com',
+    iosBundleId: 'com.jacekkawiorski.gamedonelist.RunnerTests',
   );
 }

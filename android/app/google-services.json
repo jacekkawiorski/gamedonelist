@@ -29,6 +29,13 @@
             {
               "client_id": "115231981082-cfbali4a6saeqks9v3oq71vn1tbjs7jk.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "115231981082-9b4526k07dmsthip8043ur2eh4clobql.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.jacekkawiorski.gamedonelist"
+              }
             }
           ]
         }
