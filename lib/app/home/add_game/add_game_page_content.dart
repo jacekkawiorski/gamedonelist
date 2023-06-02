@@ -14,6 +14,8 @@ class _AddGamePageContentState extends State<AddGamePageContent> {
   var gameName = '';
   var system = '';
   var playTime = '';
+  var rating = 3.0;
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -46,13 +48,26 @@ class _AddGamePageContentState extends State<AddGamePageContent> {
             },
           ),
           const SizedBox(height: 50),
+          Text('Ocena '),
+          Slider(
+            onChanged: (newValue) {
+              setState(() {
+                rating = newValue;
+              });
+            },
+            value: rating,
+            min: 1.0,
+            max: 6.0,
+            divisions: 10,
+            label: rating.toString(),
+          ),
           ElevatedButton(
             onPressed: () {
               FirebaseFirestore.instance.collection('games').add({
                 'gameName': gameName,
                 'system': system,
                 'time': playTime,
-                'rating': 4.5,
+                'rating': rating,
               });
             },
             child: const Text('Dodaj do listy'),

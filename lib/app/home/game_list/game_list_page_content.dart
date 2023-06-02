@@ -24,47 +24,93 @@ class GameListPageContent extends StatelessWidget {
 
           final documents = snapshot.data!.docs;
 
-          return ListView(
-            children: [
-              for (final document in documents) ...[
-                Padding(
-                  padding: const EdgeInsets.all(10),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          return Padding(
+            padding: const EdgeInsets.all(8),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Column(
-                        children: [
-                          const Text('Game Name'),
-                          const SizedBox(height: 25),
-                          Text(document['gameName']),
-                        ],
+                      const Text(
+                        'Game Name',
+                        style: TextStyle(
+                          color: Colors.red,
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
-                      Column(
-                        children: [
-                          const Text('System'),
-                          const SizedBox(height: 25),
-                          Text(document['system']),
-                        ],
+                      const SizedBox(height: 15),
+                      for (final document in documents) ...[
+                        const SizedBox(height: 8),
+                        Text(document['gameName']),
+                      ]
+                    ],
+                  ),
+                ),
+                Container(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'System',
+                        style: TextStyle(
+                          color: Colors.red,
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
-                      Column(
-                        children: [
-                          const Text('Play Time'),
-                          const SizedBox(height: 25),
-                          Text(document['time'].toString()),
-                        ],
+                      const SizedBox(height: 15),
+                      for (final document in documents) ...[
+                        const SizedBox(height: 8),
+                        Text(document['system']),
+                      ]
+                    ],
+                  ),
+                ),
+                Container(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      const Text(
+                        'Play Time',
+                        style: TextStyle(
+                          color: Colors.red,
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
-                      Column(
-                        children: [
-                          const Text('Rating'),
-                          const SizedBox(height: 25),
-                          Text(document['rating'].toString()),
-                        ],
+                      const SizedBox(height: 15),
+                      for (final document in documents) ...[
+                        const SizedBox(height: 8),
+                        Text(document['time'].toString()),
+                      ]
+                    ],
+                  ),
+                ),
+                Container(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      const Text(
+                        'Rating',
+                        style: TextStyle(
+                          color: Colors.red,
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
+                      const SizedBox(height: 15),
+                      for (final document in documents) ...[
+                        const SizedBox(height: 8),
+                        Text(document['rating'].toString()),
+                      ]
                     ],
                   ),
                 ),
               ],
-            ],
+            ),
           );
         });
   }
