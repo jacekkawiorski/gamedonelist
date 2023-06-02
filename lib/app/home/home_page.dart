@@ -31,7 +31,11 @@ class _HomePageState extends State<HomePage> {
           return const GameListPageContent();
         }
         if (currenttIndex == 1) {
-          return const AddGamePageContent();
+          return AddGamePageContent(onSave: () {
+            setState(() {
+              currenttIndex = 0;
+            });
+          });
         }
 
         return MyAccountPageContent(email: widget.user.email);
